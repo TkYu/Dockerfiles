@@ -2,13 +2,13 @@
 # Dockerfile for finalspeed
 #
 
-FROM alpine:latest
+FROM cantara/alpine-openjdk-jdk8:latest
 
 MAINTAINER fs <d1sm@ip4a.com>
 
 ENV FS_URL http://ccc.xxx/fs.jar
 ENV FS_DIR /fs
-ENV FS_DEP wget openjdk8-jre libpcap iptables
+ENV FS_DEP wget libpcap iptables
 
 USER root
 
@@ -21,6 +21,7 @@ RUN \
   rm -rf /var/cache/apk/*
 
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
+
 ENV SERVER_PORT 150
 
 WORKDIR $FS_DIR
@@ -28,4 +29,4 @@ WORKDIR $FS_DIR
 EXPOSE $SERVER_PORT
 EXPOSE $SERVER_PORT/udp
 
-CMD ["java -Xmx512M -XX:MaxGCPauseMillis=30 -jar fs.jar"]
+CMD ["/usr/lib/jvm/java-1.8-openjdk/bin/java -Xmx512M -XX:MaxGCPauseMillis=30 -jar fs.jar"]
