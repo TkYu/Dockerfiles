@@ -28,7 +28,7 @@ RUN wget -O fs.jar http://ccc.xxx/fs.jar
 WORKDIR /
 RUN rm -rf $BASEDIR/shadowsocks-libev\
  && apt-get --purge autoremove -y $DEPENDENCIES\
- $$ apt-get clean -y
+ && apt-get clean -y
 
 # Port in the config file won't take affect. Instead we'll use 8388.
 EXPOSE $SERVER_PORT
