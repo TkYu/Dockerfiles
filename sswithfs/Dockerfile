@@ -36,5 +36,6 @@ EXPOSE $SERVER_PORT/udp
 EXPOSE $FS_PORT/udp
 # Override the host and port in the config file.
 ADD entrypoint /
+RUN chmod +x /entrypoint
 ENTRYPOINT ["/entrypoint"]
 CMD ["-h"]
