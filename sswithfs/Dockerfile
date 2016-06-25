@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM java:latest
 
 MAINTAINER ss <shadowsocks@shadowsocks.org>
 
@@ -7,7 +7,7 @@ ENV BASEDIR /tmp/shadowsocks-libev
 ENV SERVER_PORT 8338
 
 ENV FS_PORT 150
-ENV FS_DEPENDENCIES openjdk-8-jre libpcap-dev iptables
+ENV FS_DEPENDENCIES libpcap-dev iptables
 ENV FS_BASEDIR /fs/
 
 # Set up building environment

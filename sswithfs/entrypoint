@@ -61,7 +61,7 @@ function print_usage_port {
   echo
 }
 
-OPTIONS=`getopt -o s:p:k:m:t:c:uvh --long server:,key:,password:,encrypt-method:,timeout:,acl:,server-port:,config-file:,fast-open,help -n "$IMAGE_NAME" -- "$@"`
+OPTIONS=`getopt -o s:p:k:m:x:t:c:uvh --long server:,key:,password:,encrypt-method:,xmx:,timeout:,acl:,server-port:,config-file:,fast-open,help -n "$IMAGE_NAME" -- "$@"`
 if [ $? -ne 0 ]; then
   print_usage
   exit 1
