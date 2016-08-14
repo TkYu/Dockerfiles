@@ -2,7 +2,7 @@ FROM java:latest
 
 MAINTAINER ss <shadowsocks@shadowsocks.org>
 
-ENV DEPENDENCIES git-core build-essential wget unzip autoconf libtool libssl-dev
+ENV DEPENDENCIES git-core build-essential wget unzip autoconf libtool libssl-dev asciidoc xmlto
 ENV BASEDIR /tmp/shadowsocks-libev
 ENV SERVER_PORT 8338
 
