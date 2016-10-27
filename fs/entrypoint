@@ -1,0 +1,33 @@
+#! /bin/bash
+
+IMAGE_NAME="tsungkang/finalspeed"
+PORTNUMBER="150"
+JAVA_XMX="-Xmx512M"
+function print_usage {
+  echo
+  echo "Usage:"
+  echo "  docker run $IMAGE_NAME [OPTIONS]"
+  echo
+  echo "OPTIONS"
+  echo "  [-x <Xmxn>]              Specify the maximum size, in bytes, of the memory allocation pool, example:512M."
+  echo "  [-h]                     print this"
+  echo
+}
+while getopts 'x:h' OPT; do
+    case $OPT in
+        x)
+            JAVA_XMX="-Xmx$OPTARG";;
+        h)
+            print_usage;;
+        ?)
+            echo "$IMAGE_NAME: unexpected argument: $1"
+          print_usage
+    esac
+done
+shift $(($OPTIND - 1))
+echo "Launching finalspeed server..."
+echo "Current java Xmx value is $JAVA_XMX"
+cd /fs
+ulimit -s 65535
+ulimit -n 65535
+nohup java $JAVA_XMX -XX:MaxGCPauseMillis=30 -jar fs.jar > server.log 2>&1  &
