@@ -2,7 +2,7 @@ FROM java:latest
 
 MAINTAINER ss <shadowsocks@shadowsocks.org>
 
-ENV DEPENDENCIES git-core build-essential autoconf libtool libssl-dev asciidoc xmlto libpcre3 libpcre3-dev
+ENV DEPENDENCIES git-core build-essential autoconf libtool libssl-dev asciidoc xmlto libpcre3-dev
 ENV BASEDIR /tmp/shadowsocks-libev
 ENV SERVER_PORT 8338
 
@@ -24,7 +24,7 @@ RUN ./configure \
 # Tear down building environment and delete git repository
 WORKDIR /
 RUN rm -rf $BASEDIR/shadowsocks-libev\
- && apt-get --purge autoremove -y $DEPENDENCIES\
+ && apt-get autoremove --purge -y $DEPENDENCIES\
  && apt-get clean -y
 
 # Port in the config file won't take affect. Instead we'll use 8388.

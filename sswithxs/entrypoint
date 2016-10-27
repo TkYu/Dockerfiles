@@ -61,7 +61,7 @@ function print_usage_port {
   echo
 }
 
-OPTIONS=`getopt -o s:p:k:m:x:t:c:uvh --long server:,key:,password:,encrypt-method:,xmx:,timeout:,acl:,server-port:,config-file:,fast-open,help -n "$IMAGE_NAME" -- "$@"`
+OPTIONS=`getopt -o s:p:k:m:x:t:c:uvh --long server:,key:,password:,encrypt-method:,xmx:,timeout:,acl:,xspwd:,server-port:,config-file:,fast-open,help -n "$IMAGE_NAME" -- "$@"`
 if [ $? -ne 0 ]; then
   print_usage
   exit 1
@@ -75,6 +75,7 @@ while true; do
     -x|--xmx)                 JAVA_XMX="-Xmx$2";        shift 2;;
     -t|--timeout)             TIMEOUT="-t $2";          shift 2;;
     --acl)                    ACL="--acl $2";           shift 2;;
+	--xspwd)                  echo "$2" > /xs/cnf/password; shift 2;;
     --fast-open)              FAST_OPEN="--fast-open";  shift;;
     -u)                       UDP_RELAY="-u";           shift;;
     -v)                       VERBOSE="-v";             shift;;
