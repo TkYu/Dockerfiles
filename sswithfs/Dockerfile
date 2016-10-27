@@ -33,7 +33,7 @@ EXPOSE $SERVER_PORT/udp
 EXPOSE $FS_PORT/udp
 # Override the host and port in the config file.
 WORKDIR $FS_BASEDIR
-ADD fs.jar /
+ADD fs.jar $FS_BASEDIR/
 ADD entrypoint /
 RUN chmod +x /entrypoint
 ENTRYPOINT ["/entrypoint"]
