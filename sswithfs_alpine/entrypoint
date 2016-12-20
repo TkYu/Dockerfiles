@@ -3,7 +3,7 @@
 IMAGE_NAME="shadowsocks/shadowsocks-libev"
 PORTNUMBER="8388"
 
-SHADOWSOCKS="/usr/local/bin/ss-server"
+SHADOWSOCKS="ss-server"
 HOST="-s 0.0.0.0"
 PORT="-p $PORTNUMBER"
 JSON=""
