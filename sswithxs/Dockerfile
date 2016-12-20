@@ -4,7 +4,7 @@ MAINTAINER ss <shadowsocks@shadowsocks.org>
 
 ENV DEPENDENCIES git-core build-essential autoconf libtool libssl-dev asciidoc xmlto libpcre3-dev
 ENV BASEDIR /tmp/shadowsocks-libev
-ENV SERVER_PORT 8338
+ENV SERVER_PORT 8388
 
 ENV XS_PORT 130
 ENV XS_DEPENDENCIES libpcap-dev iptables
