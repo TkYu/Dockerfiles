@@ -8,7 +8,7 @@ RUN set -ex && \
     apk add --no-cache --virtual .deps curl tar && \
     mkdir /cerebro && \
     cd /cerebro && \
-    curl -sSL https://github.com/lmenezes/cerebro/releases/download/v0.4.1/cerebro-${VERSION}.tgz | tar xz --strip 1 && \
+    curl -sSL https://github.com/lmenezes/cerebro/releases/download/v${VERSION}/cerebro-${VERSION}.tgz | tar xz --strip 1 && \
     apk del .deps
 WORKDIR /cerebro
 EXPOSE 9000
