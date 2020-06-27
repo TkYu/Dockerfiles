@@ -1,9 +1,9 @@
-# Elasticsearch 6.8.10
+# Elasticsearch 7.8.0
 
 # This image re-bundles the Docker image from the upstream provider, Elastic.
 
-FROM docker.elastic.co/elasticsearch/elasticsearch:6.8.10@sha256:f8e21f6b2ef75dcda374da505fcb0ff4bf7e8d025f12096c498123fa4e372c1b
-ARG VERSION=6.8.10
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.8.0@sha256:161bc8c7054c622b057324618a2e8bc49ae703e64901b141a16d9c8bdd3b82f9
+ARG VERSION=7.8.0
 
 # do all in one step
 RUN cd /usr/share/elasticsearch/plugins/ && \
