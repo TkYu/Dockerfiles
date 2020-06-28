@@ -7,7 +7,7 @@ ARG VERSION=7.8.0
 
 # do all in one step
 RUN cd /usr/share/elasticsearch/plugins/ && \
-    wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${VERSION}/elasticsearch-analysis-ik-${VERSION}.zip && \
-    wget https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v${VERSION}/elasticsearch-analysis-pinyin-${VERSION}.zip && \
+    curl https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${VERSION}/elasticsearch-analysis-ik-${VERSION}.zip -L --output elasticsearch-analysis-ik-${VERSION}.zip && \
+    curl https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v${VERSION}/elasticsearch-analysis-pinyin-${VERSION}.zip -L --output elasticsearch-analysis-pinyin-${VERSION}.zip && \
     unzip elasticsearch-analysis-ik-${VERSION}.zip -d ik && rm -f elasticsearch-analysis-ik-${VERSION}.zip && \
     unzip elasticsearch-analysis-pinyin-${VERSION}.zip -d pinyin && rm -f elasticsearch-analysis-pinyin-${VERSION}.zip
